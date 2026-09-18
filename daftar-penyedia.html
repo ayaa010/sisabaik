@@ -6,43 +6,36 @@
         <meta name="description" content="Formulir prototipe untuk mendaftarkan usaha sebagai penyedia makanan di SisaBaik.">
         <title>Daftar Penyedia | SisaBaik</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="app.js" defer></script>
     </head>
     <body>
-        <a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
+        <a href="#konten-utama">Lewati ke konten utama</a>
 
-        <header class="site-header">
-            <div class="container header-layout">
-            <p class="brand">SisaBaik</p>
+        <header>
+            <p><strong>SisaBaik</strong></p>
             <nav aria-label="Navigasi Utama">
-                <ul class="nav-list">
+                <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="daftar-penyedia.html" aria-current="page">Daftar sebagai penyedia</a></li>
                     <li><a href="tawarkan-makanan.html">Tawarkan makanan</a></li>
                 </ul>
             </nav>
-            </div>
         </header>
 
-        <main class="container" id="konten-utama" tabindex="-1">
-            <div class="page-heading">
+        <main id="konten-utama" tabindex="-1">
             <h1>Daftar sebagai penyedia SisaBaik</h1>
-                <p class="lead">
+                <p>
                     Gunakan data fiktif selama pratikum. Formulir ini belum terhubung ke server dan basis data.
                 </p>
-                <p class="required-note" id="petunjuk-wajib">Kolom bertanda <strong>*</strong> wajib diisi.</p>
-            </div>
-
                 <form action="daftar-penyedia.html" method="get" aria-describedby="petunjuk-wajib">
-                    <fieldset class="form-section">
+                    <fieldset>
                         <legend>Informasi Usaha</legend>
-
                         <p>
-                            <label for="nama-usaha">Nama Usaha*</label><br>
-                            <input type="text" id="nama-usaha" name="nama_usaha" autocomplete="organization" minlength="3" maxlength="100" required>
+                            <label for="nama-usaha">Nama Usaha:</label><br>
+                            <input type="text" id="nama-usaha" name="nama-usaha" autocomplete="organization" minlength="3" maxlength="100" required>
                         </p>
-
                         <p>
-                            <label for="jenis-usaha">Jenis usaha*</label><br>
+                            <label for="jenis-usaha">Jenis usaha</label><br>
                             <select id="jenis-usaha" name="jenis_usaha" required>
                                 <option value="">Pilih jenis usaha</option>
                                 <option value="restoran">Restoran</option>
@@ -53,20 +46,13 @@
                                 <option value="lainnya">Lainnya</option>
                             </select>
                         </p>
-                    
                         <p>
                             <label for="deskripsi-usaha">Deskripsi singkat usaha</label><br>
                             <textarea id="deskripsi-usaha" name="deskripsi_usaha" rows="5" maxlength="500" aria-describedby="bantuan-deskripsi"></textarea><br>
                             <small id="bantuan-deskripsi">Jelaskan jenis produk dan jam operasional, maksimal 500 karakter.</small>
                         </p>
-
-                    </fieldset>
-
-                    <fieldset class="form-section">
-                        <legend>Penanggung jawab</legend>
-
                         <p>
-                            <label for="nama-penanggung-jawab">Nama lengkap*</label><br>
+                            <label for="nama-penanggung-jawab">Nama lengkap</label><br>
                             <input type="text" id="nama-penanggung-jawab" name="nama_penanggung_jawab" autocomplete="name" minlength="3" maxlength="100" required>
                         </p>
                         <p>
@@ -74,9 +60,8 @@
                             <input type="email" id="email" name="email" autocomplete="email" maxlength="254" aria-describedby="bantuan-email" required><br>
                             <small id="bantuan-email">Contoh: nama@usaha.example</small>
                         </p>
-
                         <p>
-                            <label for="telepon">Nomor telepon*</label><br>
+                            <label for="telepon">Nomor telepon</label><br>
                             <input type="tel" id="telepon" name="telepon" autocomplete="tel" inputmode="tel" pattern="[0-9+() ]{8,20}" aria-describedby="bantuan-telepon" required><br>
                             <small id="bantuan-telepon">Gunakan 8-20 karakter berupa angka, spasi, +, atau tanda kurung.</small>
                         </p>
@@ -106,18 +91,18 @@
                         </p>
                     </fieldset>
 
-                    <fieldset class="form-section">
+                    <fieldset>
                         <legend>Persetujuan</legend>
                         <p>
                             <input type="checkbox" id="persetujuan" name="persetujuan" value="setuju" required>
                             <label for="persetujuan">
                                 Saya menyatakan bahwa informasi latihan ini tidak menggunakan data pribadi atau data usaha yang sebenarnya.</label>
                         </p>
-                    </fieldset>
+                        </fieldset>
 
-                        <p class="form-actions">
-                            <button class="button" type="submit">Kirim pendaftaran latihan</button>
-                            <button class="button button-secondary" type="reset">Kosongkan formulir</button>
+                        <p>
+                            <button type="submit">Kirim pendaftaran latihan</button>
+                            <button type="reset">Kosongkan formulir</button>
                         </p>
                 </form> 
 
@@ -129,7 +114,7 @@
                 </section>
             </main>
 
-            <footer class="site-footer">
+            <footer>
                 <p>&copy; 2026 SisaBaik - Proyek pembelajaran Pengembangan Web.</p>
             </footer>
     </body>
