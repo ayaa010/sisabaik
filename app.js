@@ -22,14 +22,14 @@ async function siapkanKatalog(){
 
     try {
         const respons = await fetch("data/penawaran.json");
-        if(!respons.ok) throw new Error('HTTP ${respons.status}');
+        if(!respons.ok) throw new Error(`HTTP ${respons.status}`);
         const penawaran = await respons.json();
 
         function perbaruiTampilan() {
-            const kata = inputCari.Cari.value.trim().toLowerCase();
+            const kata = inputCari.value.trim().toLowerCase();
             const kategori = pilihKategori.value;
             const hasil = penawaran.filter((item) => {
-                const cocokKata = '${item.nama} ${item.penyedia}' .toLowerCase().includes(kata);
+                const cocokKata = `${item.nama} ${item.penyedia}` .toLowerCase().includes(kata);
                 const cocokKategori = kategori === "semua" || item.kategori === kategori;
                 return cocokKata && cocokKategori;
             });
@@ -48,7 +48,7 @@ async function siapkanKatalog(){
 
 function renderKartu(data, wadah, status, keranjang) {
     wadah.replaceChildren();
-    status.textContent = `${data.length} penawaran ditemukan`;
+    status.textContent = `${data.length} penawaran ditemukan.`;
     data.forEach((item) => {
         const artikel = document.createElement("article");
         artikel.className = "offer-card";
@@ -65,9 +65,9 @@ function renderKartu(data, wadah, status, keranjang) {
     artikel.querySelector("button").addEventListener("click", () => {
         keranjang.push(item);
         perbaruiRingkasan(keranjang);
-    })
+    });
     wadah.append(artikel);
-    })
+    });
 }
 
 function perbaruiRingkasan(keranjang){
